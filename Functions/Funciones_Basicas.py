@@ -85,7 +85,7 @@ Función ReLU: simulación de “neuronas muertas”
 # Modelar funciones
 
 import numpy as np
-import matplotlib.plot as plt
+import matplotlib.pyplot as plt
 
 x= np.array([1.2,2,3.2,2.5,5,6,4,8])
 y= np.array([2,3,3.4,3.1,4,4.7,3.8,7])
