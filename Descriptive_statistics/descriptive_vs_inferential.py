@@ -66,7 +66,7 @@ a continuación exploraremos un dataset que contiene todos estos tipos de datos:
 import pandas as pd
 
 df = pd.read_csv('Dataset/cars.csv')
-
+df.dtypes()
 '''
 
 Los tipos de datos de cada columna en el dataset se pueden obtener directamente con dtypes
