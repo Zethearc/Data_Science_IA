@@ -17,7 +17,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-df = pd.read_csv('cars.csv')
+df = pd.read_csv('Dataset/cars.csv')
 
 # Desviación estandar
 df['price_usd'].std()
@@ -43,12 +43,32 @@ minlimit = Q1 - 1.5*iqr
 maxlimit = Q3 + 1.5*iqr
 print('rango para detección de outliers: {}, {}'.format(minlimit, maxlimit))
 
-sns.set(rc={'figure.figsize':(11.7,8.27)})
-f, (ax_hist, ax_box) = plt.subplots(2, sharex=True, gridspec_kw={"height_ratios": (.6, .4)})
-sns.histplot(df['price_usd'], ax=ax_hist)
-sns.boxplot(df['price_usd'], ax=ax_box)
-ax_hist.set(xlabel='')
+sns.histplot(df['price_usd'])
+sns.boxplot(df['price_usd'])
 
 '''Es posible calcular varios box-plot separando por una cierta variable categorica'''
 
 sns.boxplot(x = 'engine_fuel', y = 'price_usd', data = df)
+
+# Exploracion visual de datos
+
+'''Una imagen vale mas que mil palabras, pero una buena imagen'''
+
+# https://datavizproject.com/
+
+# Diagramas de dispersion
+
+iris = sns.load_dataset('iris')
+iris.head()
+
+# scatterplot 
+sns.scatterplot(data=iris, x = 'sepal_length', y = 'petal_length', hue = 'species')
+
+# joint plot
+sns.jointplot(data=iris, x = 'sepal_length', y = 'petal_length', hue = 'species')
+
+# box plot 
+sns.boxplot(x = 'species', y = 'sepal_length', data = iris)
+
+#Barplot
+sns.barplot(x = 'species', y = 'sepal_length', data = iris)
