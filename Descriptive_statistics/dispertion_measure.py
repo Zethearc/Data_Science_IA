@@ -14,7 +14,6 @@ Desviacion estandar. (Poblacion o muestra) (u - 3o) (99.72%)
 # Medidas de dispersion
 
 import pandas as pd 
-import matplotlib.pyplot as plt
 import seaborn as sns
 
 df = pd.read_csv('Dataset/cars.csv')
