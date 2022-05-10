@@ -33,7 +33,6 @@ max_val = df['price_usd'].quantile(q=1.0)
 print(min_val, Q1, median, Q3, max_val)
 
 iqr = Q3 - Q1
-iqr
 
 '''Limites para deteccion de outliers
 Datos entre Q1-1.5 x IQR y Q3 + 1.5 IQR
